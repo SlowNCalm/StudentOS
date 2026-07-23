@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You — Your Student Life OS Download</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1F3864;
+    --navy-deep:#152647;
+    --sage:#5C7C6B;
+    --bg:#FAFAF7;
+    --surface:#FFFFFF;
+    --border:#E4E1D9;
+    --text:#20201C;
+    --muted:#6B6B64;
+    --tint:#EEF2ED;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter', sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+  }
+  h1,h2{ font-family:'Fraunces', serif; font-weight:500; letter-spacing:-0.01em; }
+  .mono{ font-family:'IBM Plex Mono', monospace; }
+  .card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:16px;
+    max-width:560px;
+    width:100%;
+    padding:48px 44px;
+    text-align:center;
+    box-shadow:0 20px 50px -20px rgba(31,56,100,0.2);
+  }
+  .check{
+    width:56px; height:56px; border-radius:50%;
+    background:var(--tint); color:var(--sage);
+    display:flex; align-items:center; justify-content:center;
+    font-size:26px; margin:0 auto 20px auto;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.1em;
+    text-transform:uppercase; color:var(--sage); font-weight:600; margin-bottom:10px;
+  }
+  h1{ font-size:28px; color:var(--navy-deep); margin-bottom:12px; }
+  p.lede{ color:var(--muted); font-size:15px; margin-bottom:32px; }
+  .btn-primary{
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--navy); color:#fff; font-weight:600; font-size:15px;
+    padding:15px 26px; border-radius:8px; text-decoration:none;
+    transition:background .15s ease, transform .12s ease;
+  }
+  .btn-primary:hover{ background:var(--navy-deep); transform:translateY(-1px); }
+  .file-note{ margin-top:14px; font-size:12.5px; color:var(--muted); }
+  .divider{ border:none; border-top:1px solid var(--border); margin:32px 0; }
+  .next-steps{ text-align:left; }
+  .next-steps h2{ font-size:15px; color:var(--navy-deep); margin-bottom:12px; }
+  .next-steps ol{ padding-left:20px; }
+  .next-steps li{ font-size:13.5px; color:var(--muted); margin-bottom:8px; }
+  .next-steps code{ background:var(--tint); padding:1.5px 6px; border-radius:5px; font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:var(--navy-deep); }
+  .support{ margin-top:28px; font-size:12.5px; color:var(--muted); }
+  .support a{ color:var(--navy); font-weight:600; text-decoration:underline; }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <div class="check">✓</div>
+  <div class="eyebrow">Payment confirmed</div>
+  <h1>You're all set — thank you.</h1>
+  <p class="lede">Your Student Life OS workbook is ready. The download starts automatically, or grab it with the button below.</p>
+
+  <a id="download-btn" class="btn-primary" href="./Student-Life-OS-Google-Sheet.xlsx" download="Student-Life-OS.xlsx">
+    Download your workbook ↓
+  </a>
+  <p class="file-note">.xlsx file · opens in Excel or imports into Google Sheets</p>
+
+  <hr class="divider">
+
+  <div class="next-steps">
+    <h2>Next steps</h2>
+    <ol>
+      <li>Open <strong>Google Sheets</strong> → <code>File</code> → <code>Import</code> → <code>Upload</code>, and choose "Insert new sheet(s)" so every tab and formula comes over intact.</li>
+      <li>Open the <strong>Read Me</strong> tab first — it covers setup and how each tab connects to the others.</li>
+      <li>Replace the sample rows on each tab with your own classes, assignments, and transactions.</li>
+    </ol>
+  </div>
+
+  <p class="support">Trouble downloading, or a question about setup? Email <a href="mailto:[email protected]">[email protected]</a> — a receipt was also sent to your inbox.</p>
+</div>
+
+<script>
+  // Auto-start the download once the page loads, so most buyers never have to click anything.
+  window.addEventListener("load", function () {
+    var link = document.getElementById("download-btn");
+    var auto = document.createElement("a");
+    auto.href = link.href;
+    auto.download = link.getAttribute("download");
+    document.body.appendChild(auto);
+    auto.click();
+    document.body.removeChild(auto);
+  });
+</script>
+
+</body>
+</html>
