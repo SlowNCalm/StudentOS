@@ -63,6 +63,11 @@
     transition:background .15s ease, transform .12s ease;
   }
   .btn-primary:hover{ background:var(--navy-deep); transform:translateY(-1px); }
+  .btn-secondary-link{
+    display:block; margin-top:14px; font-size:13px; color:var(--muted);
+    text-decoration:underline; text-underline-offset:2px;
+  }
+  .btn-secondary-link:hover{ color:var(--navy); }
   .file-note{ margin-top:14px; font-size:12.5px; color:var(--muted); }
   .divider{ border:none; border-top:1px solid var(--border); margin:32px 0; }
   .next-steps{ text-align:left; }
@@ -80,41 +85,30 @@
   <div class="check">✓</div>
   <div class="eyebrow">Payment confirmed</div>
   <h1>You're all set — thank you.</h1>
-  <p class="lede">Your Student Life OS workbook is ready. The download starts automatically, or grab it with the button below.</p>
+  <p class="lede">Your Student Life OS workbook is ready — get your own copy below.</p>
 
-  <a id="download-btn" class="btn-primary" href="https://drive.google.com/uc?export=download&id=1Fkq-NQsyaBQNAWNEsTHGe01a29xVHbOD0fPCY5RFcrw" download="Student-Life-OS.xlsx">
-    Download your workbook ↓
+  <a id="copy-btn" class="btn-primary" href="https://docs.google.com/spreadsheets/d/1Fkq-NQsyaBQNAWNEsTHGe01a29xVHbOD0fPCY5RFcrw/copy">
+    Get your copy in Google Sheets ↓
   </a>
-  <p class="file-note">.xlsx file · opens in Excel or imports into Google Sheets</p>
+  <p class="file-note">Opens Google's "Make a copy" — it saves straight to your own Drive</p>
+
+  <a id="download-btn" class="btn-secondary-link" href="https://docs.google.com/spreadsheets/d/1Fkq-NQsyaBQNAWNEsTHGe01a29xVHbOD0fPCY5RFcrw/export?format=xlsx" download="Student-Life-OS.xlsx">
+    Prefer Excel? Download the .xlsx instead
+  </a>
 
   <hr class="divider">
 
   <div class="next-steps">
     <h2>Next steps</h2>
     <ol>
-      <li>Open <strong>Google Sheets</strong> → <code>File</code> → <code>Import</code> → <code>Upload</code>, and choose "Insert new sheet(s)" so every tab and formula comes over intact.</li>
-      <li>Open the <strong>Read Me</strong> tab first — it covers setup and how each tab connects to the others.</li>
+      <li>Clicked "Get your copy"? It's already saved to your Drive as its own file — open the <strong>Read Me</strong> tab first to see how everything connects.</li>
+      <li>Downloaded the .xlsx instead? Open <strong>Google Sheets</strong> → <code>File</code> → <code>Import</code> → <code>Upload</code>, and choose "Insert new sheet(s)" so every tab and formula comes over intact.</li>
       <li>Replace the sample rows on each tab with your own classes, assignments, and transactions.</li>
     </ol>
   </div>
 
-  <p class="support">Trouble downloading, or a question about setup? Email <a href="mailto:tools4life.os@gmail.com
-">tools4life.os@gmail.com
-</a> — a receipt was also sent to your inbox.</p>
+  <p class="support">Trouble getting your copy, or a question about setup? Email <a href="mailto:tools4life.os@gmail.com">tools4life.os@gmail.com</a> — a receipt was also sent to your inbox.</p>
 </div>
-
-<script>
-  // Auto-start the download once the page loads, so most buyers never have to click anything.
-  window.addEventListener("load", function () {
-    var link = document.getElementById("download-btn");
-    var auto = document.createElement("a");
-    auto.href = link.href;
-    auto.download = link.getAttribute("download");
-    document.body.appendChild(auto);
-    auto.click();
-    document.body.removeChild(auto);
-  });
-</script>
 
 </body>
 </html>
